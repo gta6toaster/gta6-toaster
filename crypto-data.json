@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "title": "gta6.toaster",
+    "subtitle": "Send me some love in crypto 🌴"
+  },
+  "coins": [
+    {
+      "id": "btc",
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "icon": "₿",
+      "color": "#F7931A",
+      "chains": [
+        {
+          "id": "bitcoin",
+          "name": "Bitcoin Network",
+          "badge": "Native",
+          "address": "YOUR_BTC_ADDRESS"
+        }
+      ]
+    },
+    {
+      "id": "eth",
+      "symbol": "ETH",
+      "name": "Ethereum",
+      "icon": "Ξ",
+      "color": "#627EEA",
+      "chains": [
+        {
+          "id": "erc20",
+          "name": "Ethereum (ERC20)",
+          "badge": "ERC20",
+          "address": "YOUR_ETH_ADDRESS"
+        }
+      ]
+    },
+    {
+      "id": "sol",
+      "symbol": "SOL",
+      "name": "Solana",
+      "icon": "◎",
+      "color": "#9945FF",
+      "chains": [
+        {
+          "id": "solana",
+          "name": "Solana Network",
+          "badge": "Native",
+          "address": "YOUR_SOL_ADDRESS"
+        }
+      ]
+    },
+    {
+      "id": "bnb",
+      "symbol": "BNB",
+      "name": "BNB",
+      "icon": "⬡",
+      "color": "#F3BA2F",
+      "chains": [
+        {
+          "id": "bsc",
+          "name": "BNB Smart Chain",
+          "badge": "BEP20",
+          "address": "YOUR_BNB_ADDRESS"
+        }
+      ]
+    },
+    {
+      "id": "usdt",
+      "symbol": "USDT",
+      "name": "Tether",
+      "icon": "₮",
+      "color": "#26A17B",
+      "chains": [
+        {
+          "id": "bep20",
+          "name": "BNB Smart Chain",
+          "badge": "BEP20",
+          "address": "YOUR_USDT_BEP20_ADDRESS"
+        },
+        {
+          "id": "trc20",
+          "name": "TRON",
+          "badge": "TRC20",
+          "address": "YOUR_USDT_TRC20_ADDRESS"
+        },
+        {
+          "id": "erc20",
+          "name": "Ethereum",
+          "badge": "ERC20",
+          "address": "YOUR_USDT_ERC20_ADDRESS"
+        },
+        {
+          "id": "polygon",
+          "name": "Polygon",
+          "badge": "MATIC",
+          "address": "YOUR_USDT_POLYGON_ADDRESS"
+        },
+        {
+          "id": "solana",
+          "name": "Solana",
+          "badge": "SPL",
+          "address": "YOUR_USDT_SOL_ADDRESS"
+        }
+      ]
+    },
+    {
+      "id": "usdc",
+      "symbol": "USDC",
+      "name": "USD Coin",
+      "icon": "$",
+      "color": "#2775CA",
+      "chains": [
+        {
+          "id": "erc20",
+          "name": "Ethereum",
+          "badge": "ERC20",
+          "address": "YOUR_USDC_ERC20_ADDRESS"
+        },
+        {
+          "id": "solana",
+          "name": "Solana",
+          "badge": "SPL",
+          "address": "YOUR_USDC_SOL_ADDRESS"
+        },
+        {
+          "id": "polygon",
+          "name": "Polygon",
+          "badge": "MATIC",
+          "address": "YOUR_USDC_POLYGON_ADDRESS"
+        },
+        {
+          "id": "bep20",
+          "name": "BNB Chain",
+          "badge": "BEP20",
+          "address": "YOUR_USDC_BEP20_ADDRESS"
+        }
+      ]
+    }
+  ]
+}

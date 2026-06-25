@@ -5,150 +5,569 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gta6.toaster - Crypto Tips</title>
     <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
-            background-color: #0d0d13;
-            color: #ffffff;
+            background: #0d0d13;
+            color: #fff;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
-            margin: 0;
-            padding: 20px;
+            padding: 16px 16px 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+
         .container {
             width: 100%;
-            max-width: 450px;
-            background: #161622;
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 480px;
+        }
+
+        /* ── Header ─────────────────────────────── */
+        .header {
             text-align: center;
-            border: 1px solid #ff007f;
+            padding: 28px 0 22px;
         }
-        h2 { color: #ff007f; margin-bottom: 5px; font-size: 24px; }
-        p { color: #8a8a9e; font-size: 14px; margin-top: 0; margin-bottom: 25px; }
-        .section-title {
-            text-align: left;
-            font-size: 12px;
+        .header h1 {
+            font-size: 26px;
+            color: #ff007f;
+            letter-spacing: -0.5px;
+        }
+        .header p {
+            color: #8a8a9e;
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        /* ── Step label ──────────────────────────── */
+        .step-label {
+            font-size: 11px;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             color: #00ffff;
-            margin: 20px 0 10px 5px;
-        }
-        .wallet-card {
-            background: #222235;
-            padding: 15px;
-            border-radius: 12px;
+            margin-bottom: 12px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            border: 1px solid transparent;
+            gap: 8px;
         }
-        .wallet-card:hover {
-            border-color: #00ffff;
-            background: #2a2a42;
-        }
-        .coin-info { text-align: left; }
-        .coin-name { font-weight: bold; font-size: 16px; }
-        .network-name { font-size: 12px; color: #8a8a9e; }
-        .copy-btn {
-            background: #ff007f;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        /* Notification style */
-        .toast {
-            position: fixed;
-            bottom: 20px;
+        .step-num {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
             background: #00ffff;
             color: #0d0d13;
-            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .section { margin-bottom: 16px; }
+
+        /* ── Coin grid ───────────────────────────── */
+        .coins-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .coin-card {
+            background: #161622;
+            border: 2px solid #2a2a42;
+            border-radius: 14px;
+            padding: 14px 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeUp 0.35s ease backwards;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .coin-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--coin-color);
+            background: #1c1c2e;
+        }
+        .coin-card.selected {
+            border-color: var(--coin-color);
+            background: #1c1c2e;
+            box-shadow: 0 0 18px color-mix(in srgb, var(--coin-color) 45%, transparent);
+        }
+        .coin-icon {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--coin-color);
+            line-height: 1;
+            margin-bottom: 6px;
+            display: block;
+        }
+        .coin-symbol {
+            font-size: 13px;
+            font-weight: 700;
+            color: #fff;
+        }
+        .coin-name-small {
+            font-size: 10px;
+            color: #6a6a8e;
+            margin-top: 2px;
+        }
+
+        /* ── Chains section ──────────────────────── */
+        .animated-section {
+            overflow: hidden;
+            animation: slideDown 0.3s ease;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .hidden { display: none !important; }
+
+        .inner-card {
+            background: #161622;
+            border-radius: 16px;
+            padding: 16px;
+        }
+
+        .selected-coin-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #222235;
+        }
+        .selected-coin-icon {
+            font-size: 20px;
+            font-weight: 900;
+        }
+        .selected-coin-label { font-weight: 700; font-size: 15px; }
+        .selected-coin-sub   { font-size: 11px; color: #8a8a9e; }
+
+        .chains-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .chain-pill {
+            background: #222235;
+            border: 1.5px solid #2a2a42;
             border-radius: 30px;
-            font-weight: bold;
-            display: none;
-            box-shadow: 0 5px 15px rgba(0,255,255,0.4);
+            padding: 8px 14px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            color: #b0b0c8;
+            transition: all 0.18s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            animation: popIn 0.25s ease backwards;
+        }
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.85); }
+            to   { opacity: 1; transform: scale(1); }
+        }
+        .chain-pill:hover {
+            border-color: #00ffff;
+            color: #fff;
+            background: #2a2a42;
+        }
+        .chain-pill.selected {
+            background: #00ffff;
+            border-color: #00ffff;
+            color: #0d0d13;
+        }
+        .pill-badge {
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 5px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.12);
+        }
+        .chain-pill.selected .pill-badge {
+            background: rgba(0,0,0,0.18);
+        }
+
+        /* ── Address section ─────────────────────── */
+        .addr-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #6a6a8e;
+            margin-bottom: 8px;
+        }
+        .address-box {
+            background: #0d0d13;
+            border: 1px solid #2a2a42;
+            border-radius: 10px;
+            padding: 12px 14px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            color: #b0b0c8;
+            word-break: break-all;
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        /* ── Copy button ─────────────────────────── */
+        .copy-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #ff007f, #ff4da6);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            padding: 15px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.3s ease;
+            margin-bottom: 22px;
+        }
+        .copy-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 0; height: 0;
+            background: rgba(255,255,255,0.28);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.45s ease, height 0.45s ease, opacity 0.45s ease;
+            opacity: 1;
+        }
+        .copy-btn:active::after {
+            width: 400px; height: 400px; opacity: 0;
+        }
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255,0,127,0.45);
+        }
+        .copy-btn:active { transform: translateY(0); }
+        .copy-btn.copied {
+            background: linear-gradient(135deg, #00c853, #00e676);
+            box-shadow: 0 8px 24px rgba(0,200,83,0.45);
+        }
+        .copy-icon { font-size: 17px; transition: transform 0.2s ease; }
+        .copy-btn.copied .copy-icon { transform: scale(1.25); }
+
+        /* ── QR section ──────────────────────────── */
+        .qr-divider {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+        .qr-divider::before, .qr-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #222235;
+        }
+        .qr-divider span {
+            font-size: 10px;
+            color: #4a4a6a;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .qr-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .qr-frame {
+            background: #fff;
+            border-radius: 14px;
+            padding: 12px;
+            box-shadow: 0 0 30px rgba(0,255,255,0.12);
+        }
+        .qr-frame canvas, .qr-frame img {
+            display: block;
+            border-radius: 4px;
+        }
+        .qr-hint {
+            font-size: 12px;
+            color: #6a6a8e;
+            text-align: center;
+        }
+
+        /* ── Toast ───────────────────────────────── */
+        .toast {
+            position: fixed;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%) translateY(80px);
+            background: #00e676;
+            color: #0d0d13;
+            padding: 11px 22px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 6px 20px rgba(0,230,118,0.5);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 999;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>gta6.toaster 🌴</h2>
-    <p>Tap any card to instantly copy the address!</p>
 
-    <div class="section-title">Stablecoins (USDT / USDC)</div>
-    
-    <div class="wallet-card" onclick="copyAddress(this)" data-address="YOUR_USDT_BEP20_ADDRESS">
-        <div class="coin-info">
-            <div class="coin-name">USDT</div>
-            <div class="network-name">BNB Smart Chain (BEP20)</div>
-        </div>
-        <button class="copy-btn">Copy</button>
+    <!-- Header -->
+    <div class="header">
+        <h1>gta6.toaster 🌴</h1>
+        <p id="headerSubtitle">Send me some love in crypto</p>
     </div>
 
-    <div class="wallet-card" onclick="copyAddress(this)" data-address="YOUR_USDT_POLYGON_ADDRESS">
-        <div class="coin-info">
-            <div class="coin-name">USDT</div>
-            <div class="network-name">Polygon Network</div>
+    <!-- Step 1: Coin -->
+    <div class="section">
+        <div class="step-label">
+            <div class="step-num">1</div>
+            Choose a Coin
         </div>
-        <button class="copy-btn">Copy</button>
+        <div class="coins-grid" id="coinsGrid">
+            <div style="grid-column:1/-1;text-align:center;color:#4a4a6a;padding:20px;font-size:13px;">
+                Loading...
+            </div>
+        </div>
     </div>
 
-    <div class="wallet-card" onclick="copyAddress(this)" data-address="YOUR_USDC_SOLANA_ADDRESS">
-        <div class="coin-info">
-            <div class="coin-name">USDC</div>
-            <div class="network-name">Solana Network</div>
+    <!-- Step 2: Chain -->
+    <div class="section hidden" id="chainsSection">
+        <div class="animated-section">
+            <div class="step-label">
+                <div class="step-num">2</div>
+                Select Network
+            </div>
+            <div class="inner-card">
+                <div class="selected-coin-info" id="selectedCoinInfo"></div>
+                <div class="chains-list" id="chainsList"></div>
+            </div>
         </div>
-        <button class="copy-btn">Copy</button>
     </div>
 
-    <div class="section-title">Native Coins</div>
+    <!-- Step 3: Address + QR -->
+    <div class="section hidden" id="addressSection">
+        <div class="animated-section">
+            <div class="step-label">
+                <div class="step-num">3</div>
+                Deposit Address
+            </div>
+            <div class="inner-card">
+                <div class="addr-label">Wallet Address</div>
+                <div class="address-box" id="addressBox"></div>
 
-    <div class="wallet-card" onclick="copyAddress(this)" data-address="YOUR_BTC_ADDRESS">
-        <div class="coin-info">
-            <div class="coin-name">Bitcoin (BTC)</div>
-            <div class="network-name">Bitcoin Native Network</div>
+                <button class="copy-btn" id="copyBtn" onclick="copyAddress()">
+                    <span class="copy-icon" id="copyIcon">📋</span>
+                    <span id="copyBtnText">Copy Address</span>
+                </button>
+
+                <div class="qr-divider"><span>or scan QR code</span></div>
+
+                <div class="qr-wrapper">
+                    <div class="qr-frame" id="qrFrame"></div>
+                    <div class="qr-hint">Scan with your wallet app</div>
+                </div>
+            </div>
         </div>
-        <button class="copy-btn">Copy</button>
     </div>
 
-    <div class="wallet-card" onclick="copyAddress(this)" data-address="YOUR_ETH_ADDRESS">
-        <div class="coin-info">
-            <div class="coin-name">Ethereum (ETH)</div>
-            <div class="network-name">ERC20 Network</div>
-        </div>
-        <button class="copy-btn">Copy</button>
-    </div>
-
-    <div class="wallet-card" onclick="copyAddress(this)" data-address="YOUR_SOL_ADDRESS">
-        <div class="coin-info">
-            <div class="coin-name">Solana (SOL)</div>
-            <div class="network-name">Solana Native Network</div>
-        </div>
-        <button class="copy-btn">Copy</button>
-    </div>
 </div>
 
-<div id="toast" class="toast">Address Copied! 👍</div>
+<div class="toast" id="toast">✅ Address Copied!</div>
+
+<!-- QR code library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
-    function copyAddress(element) {
-        const address = element.getAttribute('data-address');
-        navigator.clipboard.writeText(address).then(() => {
-            const toast = document.getElementById('toast');
-            toast.style.display = 'block';
-            setTimeout(() => { toast.style.display = 'none'; }, 2000);
+    /* ── State ─────────────────────────────────── */
+    let selectedChain = null;
+
+    /* ── Fallback data (mirrors crypto-data.json) ─ */
+    const FALLBACK = {
+        coins: [
+            { id:"btc",  symbol:"BTC",  name:"Bitcoin",  icon:"₿", color:"#F7931A",
+              chains:[{ id:"bitcoin", name:"Bitcoin Network",   badge:"Native", address:"YOUR_BTC_ADDRESS" }] },
+            { id:"eth",  symbol:"ETH",  name:"Ethereum", icon:"Ξ", color:"#627EEA",
+              chains:[{ id:"erc20",   name:"Ethereum (ERC20)",  badge:"ERC20",  address:"YOUR_ETH_ADDRESS" }] },
+            { id:"sol",  symbol:"SOL",  name:"Solana",   icon:"◎", color:"#9945FF",
+              chains:[{ id:"solana",  name:"Solana Network",    badge:"Native", address:"YOUR_SOL_ADDRESS" }] },
+            { id:"bnb",  symbol:"BNB",  name:"BNB",      icon:"⬡", color:"#F3BA2F",
+              chains:[{ id:"bsc",     name:"BNB Smart Chain",   badge:"BEP20",  address:"YOUR_BNB_ADDRESS" }] },
+            { id:"usdt", symbol:"USDT", name:"Tether",   icon:"₮", color:"#26A17B",
+              chains:[
+                { id:"bep20",   name:"BNB Smart Chain", badge:"BEP20", address:"YOUR_USDT_BEP20_ADDRESS" },
+                { id:"trc20",   name:"TRON",             badge:"TRC20", address:"YOUR_USDT_TRC20_ADDRESS" },
+                { id:"erc20",   name:"Ethereum",         badge:"ERC20", address:"YOUR_USDT_ERC20_ADDRESS" },
+                { id:"polygon", name:"Polygon",          badge:"MATIC", address:"YOUR_USDT_POLYGON_ADDRESS" },
+                { id:"solana",  name:"Solana",           badge:"SPL",   address:"YOUR_USDT_SOL_ADDRESS" }
+              ]
+            },
+            { id:"usdc", symbol:"USDC", name:"USD Coin", icon:"$", color:"#2775CA",
+              chains:[
+                { id:"erc20",   name:"Ethereum",  badge:"ERC20", address:"YOUR_USDC_ERC20_ADDRESS" },
+                { id:"solana",  name:"Solana",    badge:"SPL",   address:"YOUR_USDC_SOL_ADDRESS" },
+                { id:"polygon", name:"Polygon",   badge:"MATIC", address:"YOUR_USDC_POLYGON_ADDRESS" },
+                { id:"bep20",   name:"BNB Chain", badge:"BEP20", address:"YOUR_USDC_BEP20_ADDRESS" }
+              ]
+            }
+        ]
+    };
+
+    /* ── Load JSON ─────────────────────────────── */
+    fetch('crypto-data.json')
+        .then(r => r.ok ? r.json() : Promise.reject())
+        .then(data => init(data))
+        .catch(() => init(FALLBACK));
+
+    /* ── Render coins ──────────────────────────── */
+    function init(data) {
+        const grid = document.getElementById('coinsGrid');
+        grid.innerHTML = '';
+        data.coins.forEach((coin, i) => {
+            const card = document.createElement('div');
+            card.className = 'coin-card';
+            card.style.cssText = `--coin-color:${coin.color}; animation-delay:${i * 0.055}s`;
+            card.innerHTML = `
+                <span class="coin-icon">${coin.icon}</span>
+                <div class="coin-symbol">${coin.symbol}</div>
+                <div class="coin-name-small">${coin.name}</div>`;
+            card.onclick = () => selectCoin(coin, card, data);
+            grid.appendChild(card);
         });
     }
-</script>
 
+    /* ── Coin selected ─────────────────────────── */
+    function selectCoin(coin, cardEl, data) {
+        document.querySelectorAll('.coin-card').forEach(c => c.classList.remove('selected'));
+        cardEl.classList.add('selected');
+        selectedChain = null;
+
+        const chainsSection  = document.getElementById('chainsSection');
+        const selectedInfo   = document.getElementById('selectedCoinInfo');
+        const chainsList     = document.getElementById('chainsList');
+
+        selectedInfo.innerHTML = `
+            <span class="selected-coin-icon" style="color:${coin.color}">${coin.icon}</span>
+            <div>
+                <div class="selected-coin-label">${coin.name} <span style="color:#6a6a8e">(${coin.symbol})</span></div>
+                <div class="selected-coin-sub">${coin.chains.length} network${coin.chains.length > 1 ? 's' : ''} available</div>
+            </div>`;
+
+        chainsList.innerHTML = '';
+        coin.chains.forEach((chain, i) => {
+            const pill = document.createElement('button');
+            pill.className = 'chain-pill';
+            pill.style.animationDelay = `${i * 0.07}s`;
+            pill.innerHTML = `${chain.name} <span class="pill-badge">${chain.badge}</span>`;
+            pill.onclick = () => selectChain(chain, pill);
+            chainsList.appendChild(pill);
+        });
+
+        chainsSection.classList.remove('hidden');
+        document.getElementById('addressSection').classList.add('hidden');
+        setTimeout(() => chainsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
+
+        // Auto-select when only one network
+        if (coin.chains.length === 1) {
+            setTimeout(() => selectChain(coin.chains[0], chainsList.querySelector('.chain-pill')), 350);
+        }
+    }
+
+    /* ── Chain selected ────────────────────────── */
+    function selectChain(chain, pillEl) {
+        document.querySelectorAll('.chain-pill').forEach(p => p.classList.remove('selected'));
+        pillEl.classList.add('selected');
+        selectedChain = chain;
+
+        document.getElementById('addressBox').textContent = chain.address;
+
+        // Generate QR code
+        const qrFrame = document.getElementById('qrFrame');
+        qrFrame.innerHTML = '';
+        new QRCode(qrFrame, {
+            text: chain.address,
+            width: 180,
+            height: 180,
+            colorDark: '#0d0d13',
+            colorLight: '#ffffff',
+            correctLevel: QRCode.CorrectLevel.M
+        });
+
+        // Reset copy button
+        const btn = document.getElementById('copyBtn');
+        btn.classList.remove('copied');
+        document.getElementById('copyIcon').textContent = '📋';
+        document.getElementById('copyBtnText').textContent = 'Copy Address';
+
+        const addrSection = document.getElementById('addressSection');
+        addrSection.classList.remove('hidden');
+        setTimeout(() => addrSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
+    }
+
+    /* ── Copy address ──────────────────────────── */
+    function copyAddress() {
+        if (!selectedChain) return;
+        const addr = selectedChain.address;
+
+        const doSuccess = () => {
+            const btn      = document.getElementById('copyBtn');
+            const icon     = document.getElementById('copyIcon');
+            const btnText  = document.getElementById('copyBtnText');
+
+            btn.classList.add('copied');
+            icon.textContent    = '✅';
+            btnText.textContent = 'Copied!';
+
+            setTimeout(() => {
+                btn.classList.remove('copied');
+                icon.textContent    = '📋';
+                btnText.textContent = 'Copy Address';
+            }, 2600);
+
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2600);
+        };
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(addr).then(doSuccess).catch(() => fallbackCopy(addr, doSuccess));
+        } else {
+            fallbackCopy(addr, doSuccess);
+        }
+    }
+
+    function fallbackCopy(text, cb) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); cb(); } catch(e) {}
+        document.body.removeChild(ta);
+    }
+</script>
 </body>
 </html>
