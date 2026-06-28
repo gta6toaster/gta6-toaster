@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary SEO -->
-    <title>Tip gta6.toaster · Crypto Donations | BTC · ETH · SOL &amp; More</title>
-    <meta name="description" content="Support gta6.toaster with crypto. Send Bitcoin, Ethereum, Solana, BNB, USDT or USDC — copy the wallet address or scan the QR code in seconds.">
-    <meta name="keywords" content="gta6 toaster, crypto tips, crypto donation, donate bitcoin, ethereum tip, solana donation, BNB, USDT, USDC, tip streamer, gaming creator">
-    <meta name="author" content="gta6.toaster">
+    <title>Tip Signal Breaker · Crypto Donations | BTC · ETH · SOL &amp; More</title>
+    <meta name="description"
+        content="Support Signal Breaker with crypto. Send Bitcoin, Ethereum, Solana, BNB, USDT or USDC — copy the wallet address or scan the QR code in seconds.">
+    <meta name="keywords"
+        content="Signal Breaker, crypto tips, crypto donation, donate bitcoin, ethereum tip, solana donation, BNB, USDT, USDC, tip streamer, gaming creator">
+    <meta name="author" content="Signal Breaker">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#ff007f">
 
     <!-- Open Graph (Facebook, Discord, LinkedIn) -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="gta6.toaster">
-    <meta property="og:title" content="Tip gta6.toaster with Crypto">
-    <meta property="og:description" content="Send BTC, ETH, SOL, BNB, USDT or USDC to gta6.toaster. Copy the wallet address or scan the QR code — fast, easy, no sign-up needed.">
+    <meta property="og:site_name" content="Signal Breaker">
+    <meta property="og:title" content="Tip Signal Breaker with Crypto">
+    <meta property="og:description"
+        content="Send BTC, ETH, SOL, BNB, USDT or USDC to Signal Breaker. Copy the wallet address or scan the QR code — fast, easy, no sign-up needed.">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@gta6toaster">
-    <meta name="twitter:creator" content="@gta6toaster">
-    <meta name="twitter:title" content="Tip gta6.toaster with Crypto">
-    <meta name="twitter:description" content="Send BTC, ETH, SOL, BNB, USDT or USDC. Copy the address or scan the QR — takes seconds.">
+    <meta name="twitter:site" content="@signal_breaker">
+    <meta name="twitter:creator" content="@signal_breaker">
+    <meta name="twitter:title" content="Tip Signal Breaker with Crypto">
+    <meta name="twitter:description"
+        content="Send BTC, ETH, SOL, BNB, USDT or USDC. Copy the address or scan the QR — takes seconds.">
 
     <!-- Favicon: toaster icon (dark bg · pink body · golden toast slices) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0d13'/><rect x='3' y='17' width='26' height='12' rx='3' fill='%23ff007f'/><rect x='7' y='7' width='7' height='13' rx='2' fill='%23ffd166'/><rect x='18' y='7' width='7' height='13' rx='2' fill='%23ffd166'/><rect x='27' y='20' width='2' height='6' rx='1' fill='%23cc0066'/></svg>">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0d13'/><rect x='3' y='17' width='26' height='12' rx='3' fill='%23ff007f'/><rect x='7' y='7' width='7' height='13' rx='2' fill='%23ffd166'/><rect x='18' y='7' width='7' height='13' rx='2' fill='%23ffd166'/><rect x='27' y='20' width='2' height='6' rx='1' fill='%23cc0066'/></svg>">
 
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         body {
             background: #0d0d13;
@@ -52,11 +62,13 @@
             text-align: center;
             padding: 28px 0 22px;
         }
+
         .header h1 {
             font-size: 26px;
             color: #ff007f;
             letter-spacing: -0.5px;
         }
+
         .header p {
             color: #8a8a9e;
             font-size: 13px;
@@ -75,6 +87,7 @@
             align-items: center;
             gap: 8px;
         }
+
         .step-num {
             width: 20px;
             height: 20px;
@@ -89,7 +102,9 @@
             flex-shrink: 0;
         }
 
-        .section { margin-bottom: 16px; }
+        .section {
+            margin-bottom: 16px;
+        }
 
         /* ── Coin grid ───────────────────────────── */
         .coins-grid {
@@ -110,20 +125,31 @@
             overflow: hidden;
             animation: fadeUp 0.35s ease backwards;
         }
+
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(10px); }
-            to   { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         .coin-card:hover {
             transform: translateY(-2px);
             border-color: var(--coin-color);
             background: #1c1c2e;
         }
+
         .coin-card.selected {
             border-color: var(--coin-color);
             background: #1c1c2e;
             box-shadow: 0 0 18px color-mix(in srgb, var(--coin-color) 45%, transparent);
         }
+
         .coin-icon {
             font-size: 24px;
             font-weight: 900;
@@ -132,11 +158,13 @@
             margin-bottom: 6px;
             display: block;
         }
+
         .coin-symbol {
             font-size: 13px;
             font-weight: 700;
             color: #fff;
         }
+
         .coin-name-small {
             font-size: 10px;
             color: #6a6a8e;
@@ -148,11 +176,22 @@
             overflow: hidden;
             animation: slideDown 0.3s ease;
         }
+
         @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-8px); }
-            to   { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        .hidden { display: none !important; }
+
+        .hidden {
+            display: none !important;
+        }
 
         .inner-card {
             background: #161622;
@@ -168,12 +207,21 @@
             padding-bottom: 14px;
             border-bottom: 1px solid #222235;
         }
+
         .selected-coin-icon {
             font-size: 20px;
             font-weight: 900;
         }
-        .selected-coin-label { font-weight: 700; font-size: 15px; }
-        .selected-coin-sub   { font-size: 11px; color: #8a8a9e; }
+
+        .selected-coin-label {
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .selected-coin-sub {
+            font-size: 11px;
+            color: #8a8a9e;
+        }
 
         .chains-list {
             display: flex;
@@ -196,29 +244,41 @@
             gap: 6px;
             animation: popIn 0.25s ease backwards;
         }
+
         @keyframes popIn {
-            from { opacity: 0; transform: scale(0.85); }
-            to   { opacity: 1; transform: scale(1); }
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
+
         .chain-pill:hover {
             border-color: #00ffff;
             color: #fff;
             background: #2a2a42;
         }
+
         .chain-pill.selected {
             background: #00ffff;
             border-color: #00ffff;
             color: #0d0d13;
         }
+
         .pill-badge {
             font-size: 10px;
             font-weight: 700;
             padding: 2px 5px;
             border-radius: 4px;
-            background: rgba(255,255,255,0.12);
+            background: rgba(255, 255, 255, 0.12);
         }
+
         .chain-pill.selected .pill-badge {
-            background: rgba(0,0,0,0.18);
+            background: rgba(0, 0, 0, 0.18);
         }
 
         /* ── Address section ─────────────────────── */
@@ -229,6 +289,7 @@
             color: #6a6a8e;
             margin-bottom: 8px;
         }
+
         .address-box {
             background: #0d0d13;
             border: 1px solid #2a2a42;
@@ -262,31 +323,49 @@
             transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.3s ease;
             margin-bottom: 22px;
         }
+
         .copy-btn::after {
             content: '';
             position: absolute;
-            top: 50%; left: 50%;
-            width: 0; height: 0;
-            background: rgba(255,255,255,0.28);
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.28);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             transition: width 0.45s ease, height 0.45s ease, opacity 0.45s ease;
             opacity: 1;
         }
+
         .copy-btn:active::after {
-            width: 400px; height: 400px; opacity: 0;
+            width: 400px;
+            height: 400px;
+            opacity: 0;
         }
+
         .copy-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(255,0,127,0.45);
+            box-shadow: 0 8px 24px rgba(255, 0, 127, 0.45);
         }
-        .copy-btn:active { transform: translateY(0); }
+
+        .copy-btn:active {
+            transform: translateY(0);
+        }
+
         .copy-btn.copied {
             background: linear-gradient(135deg, #00c853, #00e676);
-            box-shadow: 0 8px 24px rgba(0,200,83,0.45);
+            box-shadow: 0 8px 24px rgba(0, 200, 83, 0.45);
         }
-        .copy-icon { font-size: 17px; transition: transform 0.2s ease; }
-        .copy-btn.copied .copy-icon { transform: scale(1.25); }
+
+        .copy-icon {
+            font-size: 17px;
+            transition: transform 0.2s ease;
+        }
+
+        .copy-btn.copied .copy-icon {
+            transform: scale(1.25);
+        }
 
         /* ── QR section ──────────────────────────── */
         .qr-divider {
@@ -295,12 +374,15 @@
             gap: 10px;
             margin-bottom: 18px;
         }
-        .qr-divider::before, .qr-divider::after {
+
+        .qr-divider::before,
+        .qr-divider::after {
             content: '';
             flex: 1;
             height: 1px;
             background: #222235;
         }
+
         .qr-divider span {
             font-size: 10px;
             color: #4a4a6a;
@@ -316,20 +398,60 @@
             align-items: center;
             gap: 10px;
         }
+
         .qr-frame {
             background: #fff;
             border-radius: 14px;
             padding: 12px;
-            box-shadow: 0 0 30px rgba(0,255,255,0.12);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.12);
         }
-        .qr-frame canvas, .qr-frame img {
+
+        .qr-frame canvas,
+        .qr-frame img {
             display: block;
             border-radius: 4px;
         }
+
         .qr-hint {
             font-size: 12px;
             color: #6a6a8e;
             text-align: center;
+        }
+
+        /* ── Social bar ─────────────────────────── */
+        .social-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 88px 0 8px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #161622;
+            border: 1.5px solid #2a2a42;
+            border-radius: 30px;
+            padding: 7px 14px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #8a8a9e;
+            text-decoration: none;
+            transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease;
+        }
+
+        .social-link:hover {
+            border-color: #ff007f;
+            color: #fff;
+            background: #1c1c2e;
+        }
+
+        .social-link svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
         }
 
         /* ── Toast ───────────────────────────────── */
@@ -344,12 +466,13 @@
             border-radius: 30px;
             font-weight: 700;
             font-size: 14px;
-            box-shadow: 0 6px 20px rgba(0,230,118,0.5);
+            box-shadow: 0 6px 20px rgba(0, 230, 118, 0.5);
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             z-index: 999;
             white-space: nowrap;
             pointer-events: none;
         }
+
         .toast.show {
             transform: translateX(-50%) translateY(0);
         }
@@ -357,336 +480,383 @@
         /* ── Confetti canvas ─────────────────────── */
         #confettiCanvas {
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
             z-index: 998;
         }
     </style>
 </head>
+
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <!-- Header -->
-    <div class="header">
-        <h1>gta6.toaster 🌴</h1>
-        <p id="headerSubtitle">Send me some love in crypto</p>
-    </div>
-
-    <!-- Step 1: Coin -->
-    <div class="section">
-        <div class="step-label">
-            <div class="step-num">1</div>
-            Choose a Coin
+        <!-- Header -->
+        <div class="header">
+            <h1>Signal Breaker 🌴</h1>
+            <p id="headerSubtitle">Send me some love in crypto</p>
         </div>
-        <div class="coins-grid" id="coinsGrid">
-            <div style="grid-column:1/-1;text-align:center;color:#4a4a6a;padding:20px;font-size:13px;">
-                Loading...
-            </div>
-        </div>
-    </div>
 
-    <!-- Step 2: Chain -->
-    <div class="section hidden" id="chainsSection">
-        <div class="animated-section">
+        <!-- Step 1: Coin -->
+        <div class="section">
             <div class="step-label">
-                <div class="step-num">2</div>
-                Select Network
+                <div class="step-num">1</div>
+                Choose a Coin
             </div>
-            <div class="inner-card">
-                <div class="selected-coin-info" id="selectedCoinInfo"></div>
-                <div class="chains-list" id="chainsList"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Step 3: Address + QR -->
-    <div class="section hidden" id="addressSection">
-        <div class="animated-section">
-            <div class="step-label">
-                <div class="step-num">3</div>
-                Deposit Address
-            </div>
-            <div class="inner-card">
-                <div class="addr-label">Wallet Address</div>
-                <div class="address-box" id="addressBox"></div>
-
-                <button class="copy-btn" id="copyBtn" onclick="copyAddress()">
-                    <span class="copy-icon" id="copyIcon">📋</span>
-                    <span id="copyBtnText">Copy Address</span>
-                </button>
-
-                <div class="qr-divider"><span>or scan QR code</span></div>
-
-                <div class="qr-wrapper">
-                    <div class="qr-frame" id="qrFrame"></div>
-                    <div class="qr-hint">Scan with your wallet app</div>
+            <div class="coins-grid" id="coinsGrid">
+                <div style="grid-column:1/-1;text-align:center;color:#4a4a6a;padding:20px;font-size:13px;">
+                    Loading...
                 </div>
             </div>
         </div>
+
+        <!-- Step 2: Chain -->
+        <div class="section hidden" id="chainsSection">
+            <div class="animated-section">
+                <div class="step-label">
+                    <div class="step-num">2</div>
+                    Select Network
+                </div>
+                <div class="inner-card">
+                    <div class="selected-coin-info" id="selectedCoinInfo"></div>
+                    <div class="chains-list" id="chainsList"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: Address + QR -->
+        <div class="section hidden" id="addressSection">
+            <div class="animated-section">
+                <div class="step-label">
+                    <div class="step-num">3</div>
+                    Deposit Address
+                </div>
+                <div class="inner-card">
+                    <div class="addr-label">Wallet Address</div>
+                    <div class="address-box" id="addressBox"></div>
+
+                    <button class="copy-btn" id="copyBtn" onclick="copyAddress()">
+                        <span class="copy-icon" id="copyIcon">📋</span>
+                        <span id="copyBtnText">Copy Address</span>
+                    </button>
+
+                    <div class="qr-divider"><span>or scan QR code</span></div>
+
+                    <div class="qr-wrapper">
+                        <div class="qr-frame" id="qrFrame"></div>
+                        <div class="qr-hint">Scan with your wallet app</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social links -->
+        <div class="social-bar" id="socialBar"></div>
+
     </div>
 
-</div>
+    <canvas id="confettiCanvas"></canvas>
+    <div class="toast" id="toast">🎉 Thank you so much! You're awesome!</div>
 
-<canvas id="confettiCanvas"></canvas>
-<div class="toast" id="toast">🎉 Thank you so much! You're awesome!</div>
+    <!-- QR code library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-<!-- QR code library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        /* ── State ─────────────────────────────────── */
+        let selectedChain = null;
 
-<script>
-    /* ── State ─────────────────────────────────── */
-    let selectedChain = null;
+        /* ── Fallback data (mirrors crypto-data.json) ─ */
+        const FALLBACK = {
+            coins: [
+                {
+                    id: "btc", symbol: "BTC", name: "Bitcoin", icon: "₿", color: "#F7931A",
+                    chains: [{ id: "bitcoin", name: "Bitcoin Network", badge: "Native", address: "YOUR_BTC_ADDRESS" }]
+                },
+                {
+                    id: "eth", symbol: "ETH", name: "Ethereum", icon: "Ξ", color: "#627EEA",
+                    chains: [{ id: "erc20", name: "Ethereum (ERC20)", badge: "ERC20", address: "YOUR_ETH_ADDRESS" }]
+                },
+                {
+                    id: "sol", symbol: "SOL", name: "Solana", icon: "◎", color: "#9945FF",
+                    chains: [{ id: "solana", name: "Solana Network", badge: "Native", address: "YOUR_SOL_ADDRESS" }]
+                },
+                {
+                    id: "bnb", symbol: "BNB", name: "BNB", icon: "⬡", color: "#F3BA2F",
+                    chains: [{ id: "bsc", name: "BNB Smart Chain", badge: "BEP20", address: "YOUR_BNB_ADDRESS" }]
+                },
+                {
+                    id: "usdt", symbol: "USDT", name: "Tether", icon: "₮", color: "#26A17B",
+                    chains: [
+                        { id: "bep20", name: "BNB Smart Chain", badge: "BEP20", address: "YOUR_USDT_BEP20_ADDRESS" },
+                        { id: "trc20", name: "TRON", badge: "TRC20", address: "YOUR_USDT_TRC20_ADDRESS" },
+                        { id: "erc20", name: "Ethereum", badge: "ERC20", address: "YOUR_USDT_ERC20_ADDRESS" },
+                        { id: "polygon", name: "Polygon", badge: "MATIC", address: "YOUR_USDT_POLYGON_ADDRESS" },
+                        { id: "solana", name: "Solana", badge: "SPL", address: "YOUR_USDT_SOL_ADDRESS" }
+                    ]
+                },
+                {
+                    id: "usdc", symbol: "USDC", name: "USD Coin", icon: "$", color: "#2775CA",
+                    chains: [
+                        { id: "erc20", name: "Ethereum", badge: "ERC20", address: "YOUR_USDC_ERC20_ADDRESS" },
+                        { id: "solana", name: "Solana", badge: "SPL", address: "YOUR_USDC_SOL_ADDRESS" },
+                        { id: "polygon", name: "Polygon", badge: "MATIC", address: "YOUR_USDC_POLYGON_ADDRESS" },
+                        { id: "bep20", name: "BNB Chain", badge: "BEP20", address: "YOUR_USDC_BEP20_ADDRESS" }
+                    ]
+                }
+            ]
+        };
 
-    /* ── Fallback data (mirrors crypto-data.json) ─ */
-    const FALLBACK = {
-        coins: [
-            { id:"btc",  symbol:"BTC",  name:"Bitcoin",  icon:"₿", color:"#F7931A",
-              chains:[{ id:"bitcoin", name:"Bitcoin Network",   badge:"Native", address:"YOUR_BTC_ADDRESS" }] },
-            { id:"eth",  symbol:"ETH",  name:"Ethereum", icon:"Ξ", color:"#627EEA",
-              chains:[{ id:"erc20",   name:"Ethereum (ERC20)",  badge:"ERC20",  address:"YOUR_ETH_ADDRESS" }] },
-            { id:"sol",  symbol:"SOL",  name:"Solana",   icon:"◎", color:"#9945FF",
-              chains:[{ id:"solana",  name:"Solana Network",    badge:"Native", address:"YOUR_SOL_ADDRESS" }] },
-            { id:"bnb",  symbol:"BNB",  name:"BNB",      icon:"⬡", color:"#F3BA2F",
-              chains:[{ id:"bsc",     name:"BNB Smart Chain",   badge:"BEP20",  address:"YOUR_BNB_ADDRESS" }] },
-            { id:"usdt", symbol:"USDT", name:"Tether",   icon:"₮", color:"#26A17B",
-              chains:[
-                { id:"bep20",   name:"BNB Smart Chain", badge:"BEP20", address:"YOUR_USDT_BEP20_ADDRESS" },
-                { id:"trc20",   name:"TRON",             badge:"TRC20", address:"YOUR_USDT_TRC20_ADDRESS" },
-                { id:"erc20",   name:"Ethereum",         badge:"ERC20", address:"YOUR_USDT_ERC20_ADDRESS" },
-                { id:"polygon", name:"Polygon",          badge:"MATIC", address:"YOUR_USDT_POLYGON_ADDRESS" },
-                { id:"solana",  name:"Solana",           badge:"SPL",   address:"YOUR_USDT_SOL_ADDRESS" }
-              ]
-            },
-            { id:"usdc", symbol:"USDC", name:"USD Coin", icon:"$", color:"#2775CA",
-              chains:[
-                { id:"erc20",   name:"Ethereum",  badge:"ERC20", address:"YOUR_USDC_ERC20_ADDRESS" },
-                { id:"solana",  name:"Solana",    badge:"SPL",   address:"YOUR_USDC_SOL_ADDRESS" },
-                { id:"polygon", name:"Polygon",   badge:"MATIC", address:"YOUR_USDC_POLYGON_ADDRESS" },
-                { id:"bep20",   name:"BNB Chain", badge:"BEP20", address:"YOUR_USDC_BEP20_ADDRESS" }
-              ]
-            }
-        ]
-    };
+        /* ── Social icons ──────────────────────────── */
+        const SOCIAL_META = {
+            facebook: { label: 'Facebook', color: '#1877F2', svg: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.791-4.697 4.533-4.697 1.313 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>' },
+            twitter: { label: 'X', color: '#fff', svg: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>' },
+            tiktok: { label: 'TikTok', color: '#ff0050', svg: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>' },
+            instagram: { label: 'Instagram', color: '#E1306C', svg: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>' },
+            youtube: { label: 'YouTube', color: '#FF0000', svg: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>' },
+            linktree: { label: 'Linktree', color: '#43e55e', svg: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.953 15.066c-.08.163-.08.324-.08.486.08.517.528.897 1.052.897h2.534v5.503c0 .649.516 1.13 1.133 1.13.619 0 1.134-.481 1.134-1.13v-5.503h2.534c.527 0 .973-.38 1.052-.897.08-.486-.162-.973-.608-1.216l-3.669-2.27-.243-.163V8.84l3.831 2.353c.203.122.447.163.69.122.528-.08.893-.569.893-1.097 0-.325-.122-.61-.365-.813L13.21 6.553V2.944c0-.649-.516-1.13-1.134-1.13-.617 0-1.133.481-1.133 1.13v3.61L7.38 9.404c-.244.204-.366.489-.366.814 0 .527.366 1.016.893 1.097.244.04.487 0 .69-.122l3.832-2.353v3.062l-.244.163-3.587 2.19c-.285.162-.527.486-.645.811z"/></svg>' },
+            website: { label: 'Website', color: '#00ffff', svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>' }
+        };
 
-    /* ── Load JSON ─────────────────────────────── */
-    fetch('crypto-data.json')
-        .then(r => r.ok ? r.json() : Promise.reject())
-        .then(data => init(data))
-        .catch(() => init(FALLBACK));
+        function renderSocials(socials) {
+            if (!socials) return;
+            const bar = document.getElementById('socialBar');
+            Object.entries(socials).forEach(([key, url]) => {
+                const meta = SOCIAL_META[key];
+                if (!meta) return;
+                const a = document.createElement('a');
+                a.href = url;
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+                a.className = 'social-link';
+                a.style.setProperty('--hover-color', meta.color);
+                a.innerHTML = `${meta.svg}<span>${meta.label}</span>`;
+                a.addEventListener('mouseenter', () => { a.style.borderColor = meta.color; a.style.color = meta.color; });
+                a.addEventListener('mouseleave', () => { a.style.borderColor = ''; a.style.color = ''; });
+                bar.appendChild(a);
+            });
+        }
 
-    /* ── Render coins ──────────────────────────── */
-    function init(data) {
-        const grid = document.getElementById('coinsGrid');
-        grid.innerHTML = '';
-        data.coins.forEach((coin, i) => {
-            const card = document.createElement('div');
-            card.className = 'coin-card';
-            card.style.cssText = `--coin-color:${coin.color}; animation-delay:${i * 0.055}s`;
-            card.innerHTML = `
+        /* ── Load JSON ─────────────────────────────── */
+        fetch('crypto-data.json')
+            .then(r => r.ok ? r.json() : Promise.reject())
+            .then(data => { init(data); renderSocials(data.meta?.socials); })
+            .catch(() => init(FALLBACK));
+
+        /* ── Render coins ──────────────────────────── */
+        function init(data) {
+            const grid = document.getElementById('coinsGrid');
+            grid.innerHTML = '';
+            data.coins.forEach((coin, i) => {
+                const card = document.createElement('div');
+                card.className = 'coin-card';
+                card.style.cssText = `--coin-color:${coin.color}; animation-delay:${i * 0.055}s`;
+                card.innerHTML = `
                 <span class="coin-icon">${coin.icon}</span>
                 <div class="coin-symbol">${coin.symbol}</div>
                 <div class="coin-name-small">${coin.name}</div>`;
-            card.onclick = () => selectCoin(coin, card, data);
-            grid.appendChild(card);
-        });
-    }
+                card.onclick = () => selectCoin(coin, card, data);
+                grid.appendChild(card);
+            });
+        }
 
-    /* ── Coin selected ─────────────────────────── */
-    function selectCoin(coin, cardEl, data) {
-        document.querySelectorAll('.coin-card').forEach(c => c.classList.remove('selected'));
-        cardEl.classList.add('selected');
-        selectedChain = null;
+        /* ── Coin selected ─────────────────────────── */
+        function selectCoin(coin, cardEl, data) {
+            document.querySelectorAll('.coin-card').forEach(c => c.classList.remove('selected'));
+            cardEl.classList.add('selected');
+            selectedChain = null;
 
-        const chainsSection  = document.getElementById('chainsSection');
-        const selectedInfo   = document.getElementById('selectedCoinInfo');
-        const chainsList     = document.getElementById('chainsList');
+            const chainsSection = document.getElementById('chainsSection');
+            const selectedInfo = document.getElementById('selectedCoinInfo');
+            const chainsList = document.getElementById('chainsList');
 
-        selectedInfo.innerHTML = `
+            selectedInfo.innerHTML = `
             <span class="selected-coin-icon" style="color:${coin.color}">${coin.icon}</span>
             <div>
                 <div class="selected-coin-label">${coin.name} <span style="color:#6a6a8e">(${coin.symbol})</span></div>
                 <div class="selected-coin-sub">${coin.chains.length} network${coin.chains.length > 1 ? 's' : ''} available</div>
             </div>`;
 
-        chainsList.innerHTML = '';
-        coin.chains.forEach((chain, i) => {
-            const pill = document.createElement('button');
-            pill.className = 'chain-pill';
-            pill.style.animationDelay = `${i * 0.07}s`;
-            pill.innerHTML = `${chain.name} <span class="pill-badge">${chain.badge}</span>`;
-            pill.onclick = () => selectChain(chain, pill);
-            chainsList.appendChild(pill);
-        });
-
-        chainsSection.classList.remove('hidden');
-        document.getElementById('addressSection').classList.add('hidden');
-        setTimeout(() => chainsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
-
-        // Auto-select when only one network
-        if (coin.chains.length === 1) {
-            setTimeout(() => selectChain(coin.chains[0], chainsList.querySelector('.chain-pill')), 350);
-        }
-    }
-
-    /* ── Chain selected ────────────────────────── */
-    function selectChain(chain, pillEl) {
-        document.querySelectorAll('.chain-pill').forEach(p => p.classList.remove('selected'));
-        pillEl.classList.add('selected');
-        selectedChain = chain;
-
-        document.getElementById('addressBox').textContent = chain.address;
-
-        // Generate QR code
-        const qrFrame = document.getElementById('qrFrame');
-        qrFrame.innerHTML = '';
-        new QRCode(qrFrame, {
-            text: chain.address,
-            width: 180,
-            height: 180,
-            colorDark: '#0d0d13',
-            colorLight: '#ffffff',
-            correctLevel: QRCode.CorrectLevel.M
-        });
-
-        // Reset copy button
-        const btn = document.getElementById('copyBtn');
-        btn.classList.remove('copied');
-        document.getElementById('copyIcon').textContent = '📋';
-        document.getElementById('copyBtnText').textContent = 'Copy Address';
-
-        const addrSection = document.getElementById('addressSection');
-        addrSection.classList.remove('hidden');
-        setTimeout(() => addrSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
-    }
-
-    /* ── Copy address ──────────────────────────── */
-    function copyAddress() {
-        if (!selectedChain) return;
-        const addr = selectedChain.address;
-
-        const doSuccess = () => {
-            const btn      = document.getElementById('copyBtn');
-            const icon     = document.getElementById('copyIcon');
-            const btnText  = document.getElementById('copyBtnText');
-
-            btn.classList.add('copied');
-            icon.textContent    = '✅';
-            btnText.textContent = 'Copied!';
-
-            setTimeout(() => {
-                btn.classList.remove('copied');
-                icon.textContent    = '📋';
-                btnText.textContent = 'Copy Address';
-            }, 2600);
-
-            launchConfetti();
-
-            const toast = document.getElementById('toast');
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 2800);
-        };
-
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(addr).then(doSuccess).catch(() => fallbackCopy(addr, doSuccess));
-        } else {
-            fallbackCopy(addr, doSuccess);
-        }
-    }
-
-    function fallbackCopy(text, cb) {
-        const ta = document.createElement('textarea');
-        ta.value = text;
-        ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px';
-        document.body.appendChild(ta);
-        ta.select();
-        try { document.execCommand('copy'); cb(); } catch(e) {}
-        document.body.removeChild(ta);
-    }
-
-    /* ── Confetti ──────────────────────────────── */
-    (function() {
-        const canvas = document.getElementById('confettiCanvas');
-        const ctx    = canvas.getContext('2d');
-        const COLORS = ['#ff007f','#00ffff','#FFD700','#00e676','#a855f7','#ff6b35','#fff'];
-        const SHAPES = ['rect','circle'];
-        let particles = [];
-        let rafId     = null;
-
-        function resize() {
-            canvas.width  = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resize);
-        resize();
-
-        function Particle(x, y) {
-            this.x  = x;
-            this.y  = y;
-            this.vx = (Math.random() - 0.5) * 14;
-            this.vy = -(Math.random() * 12 + 6);
-            this.w  = Math.random() * 10 + 5;
-            this.h  = Math.random() * 6  + 3;
-            this.color  = COLORS[Math.floor(Math.random() * COLORS.length)];
-            this.shape  = SHAPES[Math.floor(Math.random() * SHAPES.length)];
-            this.angle  = Math.random() * Math.PI * 2;
-            this.spin   = (Math.random() - 0.5) * 0.25;
-            this.alpha  = 1;
-            this.gravity = 0.38 + Math.random() * 0.18;
-            this.drag    = 0.97;
-        }
-
-        function launchConfetti() {
-            resize();
-            const cx = canvas.width  / 2;
-            const cy = canvas.height / 2;
-
-            for (let i = 0; i < 140; i++) {
-                particles.push(new Particle(cx, cy));
-            }
-
-            if (!rafId) animate();
-        }
-        window.launchConfetti = launchConfetti;
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            particles.forEach(p => {
-                p.vy += p.gravity;
-                p.vx *= p.drag;
-                p.vy *= p.drag;
-                p.x  += p.vx;
-                p.y  += p.vy;
-                p.angle += p.spin;
-                p.alpha -= 0.013;
-
-                ctx.save();
-                ctx.globalAlpha = Math.max(0, p.alpha);
-                ctx.translate(p.x, p.y);
-                ctx.rotate(p.angle);
-                ctx.fillStyle = p.color;
-                if (p.shape === 'circle') {
-                    ctx.beginPath();
-                    ctx.arc(0, 0, p.w / 2, 0, Math.PI * 2);
-                    ctx.fill();
-                } else {
-                    ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
-                }
-                ctx.restore();
+            chainsList.innerHTML = '';
+            coin.chains.forEach((chain, i) => {
+                const pill = document.createElement('button');
+                pill.className = 'chain-pill';
+                pill.style.animationDelay = `${i * 0.07}s`;
+                pill.innerHTML = `${chain.name} <span class="pill-badge">${chain.badge}</span>`;
+                pill.onclick = () => selectChain(chain, pill);
+                chainsList.appendChild(pill);
             });
 
-            particles = particles.filter(p => p.alpha > 0 && p.y < canvas.height + 20);
+            chainsSection.classList.remove('hidden');
+            document.getElementById('addressSection').classList.add('hidden');
+            setTimeout(() => chainsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
 
-            if (particles.length > 0) {
-                rafId = requestAnimationFrame(animate);
-            } else {
-                rafId = null;
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // Auto-select when only one network
+            if (coin.chains.length === 1) {
+                setTimeout(() => selectChain(coin.chains[0], chainsList.querySelector('.chain-pill')), 350);
             }
         }
-    })();
-</script>
+
+        /* ── Chain selected ────────────────────────── */
+        function selectChain(chain, pillEl) {
+            document.querySelectorAll('.chain-pill').forEach(p => p.classList.remove('selected'));
+            pillEl.classList.add('selected');
+            selectedChain = chain;
+
+            document.getElementById('addressBox').textContent = chain.address;
+
+            // Generate QR code
+            const qrFrame = document.getElementById('qrFrame');
+            qrFrame.innerHTML = '';
+            new QRCode(qrFrame, {
+                text: chain.address,
+                width: 180,
+                height: 180,
+                colorDark: '#0d0d13',
+                colorLight: '#ffffff',
+                correctLevel: QRCode.CorrectLevel.M
+            });
+
+            // Reset copy button
+            const btn = document.getElementById('copyBtn');
+            btn.classList.remove('copied');
+            document.getElementById('copyIcon').textContent = '📋';
+            document.getElementById('copyBtnText').textContent = 'Copy Address';
+
+            const addrSection = document.getElementById('addressSection');
+            addrSection.classList.remove('hidden');
+            setTimeout(() => addrSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
+        }
+
+        /* ── Copy address ──────────────────────────── */
+        function copyAddress() {
+            if (!selectedChain) return;
+            const addr = selectedChain.address;
+
+            const doSuccess = () => {
+                const btn = document.getElementById('copyBtn');
+                const icon = document.getElementById('copyIcon');
+                const btnText = document.getElementById('copyBtnText');
+
+                btn.classList.add('copied');
+                icon.textContent = '✅';
+                btnText.textContent = 'Copied!';
+
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    icon.textContent = '📋';
+                    btnText.textContent = 'Copy Address';
+                }, 2600);
+
+                launchConfetti();
+
+                const toast = document.getElementById('toast');
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 2800);
+            };
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(addr).then(doSuccess).catch(() => fallbackCopy(addr, doSuccess));
+            } else {
+                fallbackCopy(addr, doSuccess);
+            }
+        }
+
+        function fallbackCopy(text, cb) {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); cb(); } catch (e) { }
+            document.body.removeChild(ta);
+        }
+
+        /* ── Confetti ──────────────────────────────── */
+        (function () {
+            const canvas = document.getElementById('confettiCanvas');
+            const ctx = canvas.getContext('2d');
+            const COLORS = ['#ff007f', '#00ffff', '#FFD700', '#00e676', '#a855f7', '#ff6b35', '#fff'];
+            const SHAPES = ['rect', 'circle'];
+            let particles = [];
+            let rafId = null;
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            function Particle(x, y) {
+                this.x = x;
+                this.y = y;
+                this.vx = (Math.random() - 0.5) * 14;
+                this.vy = -(Math.random() * 12 + 6);
+                this.w = Math.random() * 10 + 5;
+                this.h = Math.random() * 6 + 3;
+                this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
+                this.shape = SHAPES[Math.floor(Math.random() * SHAPES.length)];
+                this.angle = Math.random() * Math.PI * 2;
+                this.spin = (Math.random() - 0.5) * 0.25;
+                this.alpha = 1;
+                this.gravity = 0.38 + Math.random() * 0.18;
+                this.drag = 0.97;
+            }
+
+            function launchConfetti() {
+                resize();
+                const cx = canvas.width / 2;
+                const cy = canvas.height / 2;
+
+                for (let i = 0; i < 140; i++) {
+                    particles.push(new Particle(cx, cy));
+                }
+
+                if (!rafId) animate();
+            }
+            window.launchConfetti = launchConfetti;
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                particles.forEach(p => {
+                    p.vy += p.gravity;
+                    p.vx *= p.drag;
+                    p.vy *= p.drag;
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.angle += p.spin;
+                    p.alpha -= 0.013;
+
+                    ctx.save();
+                    ctx.globalAlpha = Math.max(0, p.alpha);
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate(p.angle);
+                    ctx.fillStyle = p.color;
+                    if (p.shape === 'circle') {
+                        ctx.beginPath();
+                        ctx.arc(0, 0, p.w / 2, 0, Math.PI * 2);
+                        ctx.fill();
+                    } else {
+                        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+                    }
+                    ctx.restore();
+                });
+
+                particles = particles.filter(p => p.alpha > 0 && p.y < canvas.height + 20);
+
+                if (particles.length > 0) {
+                    rafId = requestAnimationFrame(animate);
+                } else {
+                    rafId = null;
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                }
+            }
+        })();
+    </script>
 </body>
+
 </html>

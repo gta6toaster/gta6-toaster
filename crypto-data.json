@@ -1,69 +1,18 @@
 {
   "meta": {
-    "title": "gta6.toaster",
-    "subtitle": "Send me some love in crypto 🌴"
+    "title": "Signal Breaker",
+    "subtitle": "Send me some love in crypto 🌴",
+    "socials": {
+      "youtube": "https://www.youtube.com/@signal.breaker",
+      "facebook": "https://www.facebook.com/profile.php?id=61591589573584",
+      "linktree": "https://linktr.ee/gta6.toaster",
+      "tiktok": "https://www.tiktok.com/@signal_breaker",
+      "instagram": "https://www.instagram.com/signal.breaker/",
+      "twitter": "https://x.com/signal_breaker",
+      "website": "https://signalbreaker.github.io/signal-breaker-support/"
+    }
   },
   "coins": [
-    {
-      "id": "btc",
-      "symbol": "BTC",
-      "name": "Bitcoin",
-      "icon": "₿",
-      "color": "#F7931A",
-      "chains": [
-        {
-          "id": "bitcoin",
-          "name": "Bitcoin Network",
-          "badge": "Native",
-          "address": "YOUR_BTC_ADDRESS"
-        }
-      ]
-    },
-    {
-      "id": "eth",
-      "symbol": "ETH",
-      "name": "Ethereum",
-      "icon": "Ξ",
-      "color": "#627EEA",
-      "chains": [
-        {
-          "id": "erc20",
-          "name": "Ethereum (ERC20)",
-          "badge": "ERC20",
-          "address": "YOUR_ETH_ADDRESS"
-        }
-      ]
-    },
-    {
-      "id": "sol",
-      "symbol": "SOL",
-      "name": "Solana",
-      "icon": "◎",
-      "color": "#9945FF",
-      "chains": [
-        {
-          "id": "solana",
-          "name": "Solana Network",
-          "badge": "Native",
-          "address": "YOUR_SOL_ADDRESS"
-        }
-      ]
-    },
-    {
-      "id": "bnb",
-      "symbol": "BNB",
-      "name": "BNB",
-      "icon": "⬡",
-      "color": "#F3BA2F",
-      "chains": [
-        {
-          "id": "bsc",
-          "name": "BNB Smart Chain",
-          "badge": "BEP20",
-          "address": "YOUR_BNB_ADDRESS"
-        }
-      ]
-    },
     {
       "id": "usdt",
       "symbol": "USDT",
@@ -75,31 +24,43 @@
           "id": "bep20",
           "name": "BNB Smart Chain",
           "badge": "BEP20",
-          "address": "YOUR_USDT_BEP20_ADDRESS"
+          "address": "0x863be0Dd17ae867c81d257d12F61668DE326b565"
         },
         {
           "id": "trc20",
           "name": "TRON",
           "badge": "TRC20",
-          "address": "YOUR_USDT_TRC20_ADDRESS"
+          "address": "TEvYtcbqmYAZUoSS8A6QTdtU96M5sShBkm"
         },
         {
           "id": "erc20",
           "name": "Ethereum",
           "badge": "ERC20",
-          "address": "YOUR_USDT_ERC20_ADDRESS"
+          "address": "0x863be0Dd17ae867c81d257d12F61668DE326b565"
         },
         {
           "id": "polygon",
           "name": "Polygon",
           "badge": "MATIC",
-          "address": "YOUR_USDT_POLYGON_ADDRESS"
+          "address": "0x863be0Dd17ae867c81d257d12F61668DE326b565"
         },
         {
           "id": "solana",
           "name": "Solana",
           "badge": "SPL",
-          "address": "YOUR_USDT_SOL_ADDRESS"
+          "address": "8u98FNPpjUrNhCrM3Q9JV7hpMPVLBB2tPfFqjxP9Lkxk"
+        },
+        {
+          "id": "avax",
+          "name": "Avalanche",
+          "badge": "AVAX",
+          "address": "0x863be0Dd17ae867c81d257d12F61668DE326b565"
+        },
+        {
+          "id": "arbitrum",
+          "name": "Arbitrum",
+          "badge": "ARB",
+          "address": "0x863be0Dd17ae867c81d257d12F61668DE326b565"
         }
       ]
     },
@@ -114,25 +75,157 @@
           "id": "erc20",
           "name": "Ethereum",
           "badge": "ERC20",
-          "address": "YOUR_USDC_ERC20_ADDRESS"
+          "address": "0x863be0Dd17ae867c81d257d12F61668DE326b565"
         },
         {
           "id": "solana",
           "name": "Solana",
           "badge": "SPL",
-          "address": "YOUR_USDC_SOL_ADDRESS"
+          "address": "8u98FNPpjUrNhCrM3Q9JV7hpMPVLBB2tPfFqjxP9Lkxk"
         },
         {
           "id": "polygon",
           "name": "Polygon",
           "badge": "MATIC",
-          "address": "YOUR_USDC_POLYGON_ADDRESS"
+          "address": "0x863be0Dd17ae867c81d257d12F61668DE326b565"
         },
         {
           "id": "bep20",
           "name": "BNB Chain",
           "badge": "BEP20",
-          "address": "YOUR_USDC_BEP20_ADDRESS"
+          "address": "0x863be0Dd17ae867c81d257d12F61668DE326b565"
+        },
+        {
+          "id": "avalanche",
+          "name": "Avalanche",
+          "badge": "AVAX",
+          "address": "0x863be0Dd17ae867c81d257d12F61668DE326b565"
+        },
+        {
+          "id": "arbitrum",
+          "name": "Arbitrum",
+          "badge": "ARB",
+          "address": "0x863be0Dd17ae867c81d257d12F61668DE326b565"
+        }
+      ]
+    },
+    {
+      "id": "btc",
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "icon": "₿",
+      "color": "#F7931A",
+      "chains": [
+        {
+          "id": "bitcoin",
+          "name": "Bitcoin Network",
+          "badge": "Native",
+          "address": "bc1qprgalmlv2svjq9c4rfva9cp8u4a6jl0tua76wl"
+        }
+      ]
+    },
+    {
+      "id": "eth",
+      "symbol": "ETH",
+      "name": "Ethereum",
+      "icon": "Ξ",
+      "color": "#627EEA",
+      "chains": [
+        {
+          "id": "erc20",
+          "name": "Ethereum (ERC20)",
+          "badge": "ERC20",
+          "address": "0x863be0Dd17ae867c81d257d12F61668DE326b565"
+        }
+      ]
+    },
+    {
+      "id": "sol",
+      "symbol": "SOL",
+      "name": "Solana",
+      "icon": "◎",
+      "color": "#9945FF",
+      "chains": [
+        {
+          "id": "solana",
+          "name": "Solana Network",
+          "badge": "Native",
+          "address": "8u98FNPpjUrNhCrM3Q9JV7hpMPVLBB2tPfFqjxP9Lkxk"
+        }
+      ]
+    },
+    {
+      "id": "bnb",
+      "symbol": "BNB",
+      "name": "BNB",
+      "icon": "⬡",
+      "color": "#F3BA2F",
+      "chains": [
+        {
+          "id": "bsc",
+          "name": "BNB Smart Chain",
+          "badge": "BEP20",
+          "address": "0x863be0Dd17ae867c81d257d12F61668DE326b565"
+        }
+      ]
+    },
+    {
+      "id": "ton",
+      "symbol": "TON",
+      "name": "Toncoin",
+      "icon": "💎",
+      "color": "#0088CC",
+      "chains": [
+        {
+          "id": "ton",
+          "name": "TON Network",
+          "badge": "Native",
+          "address": "UQCwijWby1gtXf-SBRKSk0BsrWzaWg1pnTcoDo8rzWfhMYmU"
+        }
+      ]
+    },
+    {
+      "id": "trx",
+      "symbol": "TRX",
+      "name": "Tron",
+      "icon": "◈",
+      "color": "#E50914",
+      "chains": [
+        {
+          "id": "trc20",
+          "name": "TRON Network",
+          "badge": "TRC20",
+          "address": "TEvYtcbqmYAZUoSS8A6QTdtU96M5sShBkm"
+        }
+      ]
+    },
+    {
+      "id": "dot",
+      "symbol": "DOT",
+      "name": "Polkadot",
+      "icon": "●",
+      "color": "#E6007A",
+      "chains": [
+        {
+          "id": "polkadot",
+          "name": "Polkadot Network",
+          "badge": "Native",
+          "address": "12Ten5s9chhdqHepopRFBv9p8HV4LCVkSEeN7B5cUhEgWTdF"
+        }
+      ]
+    },
+    {
+      "id": "xrp",
+      "symbol": "XRP",
+      "name": "XRP",
+      "icon": "✕",
+      "color": "#346AA9",
+      "chains": [
+        {
+          "id": "xrpl",
+          "name": "XRP Ledger",
+          "badge": "Native",
+          "address": "rUMDXYruEMpSqeSkaFka8emg3PeQqS8J3s"
         }
       ]
     }
